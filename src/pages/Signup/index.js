@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import styles from "./styles.module.css";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -48,43 +49,52 @@ export function Signup() {
   }
 
   return (
+    <div className={styles.container}>
+      <h1>Create Account with Email</h1>
     <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label>
+      {/* <label htmlFor="formName">Nome:</label> */}
       <input
+      placeholder="Username"
         id="formName"
         name="name"
         type="text"
         value={form.name}
         onChange={handleChange}
       />
-      <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} />
+      {/* <label htmlFor="formImg">Sua foto de perfil:</label>
+      <input type="file" id="formImg" onChange={handleImage} /> */}
 
-      <label htmlFor="formEmail">E-mail:</label>
+      {/* <label htmlFor="formEmail">E-mail:</label> */}
       <input
+      placeholder="Email"
         id="formEmail"
         name="email"
         type="email"
         value={form.email}
         onChange={handleChange}
       />
-      <label htmlFor="formPassword">Senha:</label>
+      {/* <label htmlFor="formPassword">Senha:</label> */}
       <input
+      placeholder="Password"
         id="formPassword"
         name="password"
         type="password"
         value={form.password}
         onChange={handleChange}
       />
-      <label htmlFor="formConfirmPassword">Confirmação de senha</label>
+      {/* <label htmlFor="formConfirmPassword">Confirmação de senha</label> */}
       <input
+      placeholder="Confirm your password"
         id="formConfirmPassword"
         type="password"
         name="confirmPassword"
         value={form.confirmPassword}
         onChange={handleChange}
       />
-      <button type="submit">Cadastrar</button>
+      <div>
+      <button type="submit">Create an account</button>
+      </div>      
     </form>
+    </div>
   );
 }

@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Kalam&display=swap');
+
+/* .container {
+position: absolute;
+text-align: center;
+padding-bottom: 100px;
+padding-top: 60px;
+padding-bottom: 160px;   
+margin-top: 104px; 
+font-family: 'Inter';
+} */
+
+
+.header p {
+position: relative;
+text-align: center;
+width: 200px;
+margin-top: 150px;
+margin-left: 50px;
+font-family: 'Inter';
+font-weight:bolder;
+font-size: 23px;
+font-weight: 700;
+display: flex;
+align-items: center;
+text-align: center;
+
+}
+.text {
+position: relative;
+width: 309px;
+height: 38px;
+left: 41px;
+top: 30px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 27px;
+display: flex;
+align-items: center;
+text-align: center;
+}
+
+.login {
+position: relative;
+width: 233px;
+height: 21px;
+left: 79px;
+top: 70px;  
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: center;
+}
+
+.signup {
+position: relative;
+width: 248px;
+height: 30px;
+left: 77px;
+top: 150px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 21px;
+display: flex;
+align-items: center;
+text-align: center;
+border-radius: 16px;
+border: 1px solid;
+justify-content: center;   
+}
+

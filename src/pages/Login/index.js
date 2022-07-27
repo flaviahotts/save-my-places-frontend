@@ -34,21 +34,24 @@ export function Login() {
 
   return (
     <form onSubmit={handleSumit}>
-      <label>Email:</label>
+      <h1>Log in to your account</h1>
+      {/* <label>Email:</label> */}
       <input
+      placeholder="Email"
         type="email"
         name="email"
         value={form.email}
         onChange={handleChange}
       />
-      <label>Senha:</label>
+      {/* <label>Senha:</label> */}
       <input
+      placeholder="Password"
         type="password"
         name="password"
         value={form.password}
         onChange={handleChange}
       />
-      <button type="submit">Entrar!</button>
+      <button type="submit">Sig in</button>
     </form>
   );
 }
