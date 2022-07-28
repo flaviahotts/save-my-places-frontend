@@ -22,6 +22,12 @@ export function Login() {
 
     try {
       const response = await api.post("/user/login", form);
+      console.log(response.data)
+      if(response.data.user.isActive === false){
+        navigate("/")
+        return
+      }
+
       setLoggedInUser({ ...response.data });
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));

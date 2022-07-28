@@ -22,6 +22,7 @@ export function CreateComment() {
     try {
         const response = await api.post(`/comment/${id}/create-comment`, form);
         navigate(`/my-pins/${id}`)
+        console.log(response.data);
     } catch (err) {
         console.error(err);
     }

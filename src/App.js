@@ -12,6 +12,8 @@ import { CreatePin } from "./pages/CreatePin";
 import { MyPins } from "./pages/MyPins";
 import { CreateComment } from "./pages/CreateComment";
 import { EditPin } from "./pages/EditPin";
+import { EditProfile } from "./pages/EditProfile";
+
 
 function App() {
   return (
@@ -26,8 +28,8 @@ function App() {
           <Route path="/my-pins/:id" element={<MyPins />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<ProtectedRoute component={Profile} />}
-          />
+          <Route path="/profile" element={<ProtectedRoute component={Profile} />} />
+          <Route path="/update-profile" element={<ProtectedRoute component={EditProfile} />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </AuthContextComponent>

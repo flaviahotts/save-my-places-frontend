@@ -12,6 +12,7 @@ export function MyPins() {
         comment: [{comment:""}]
     });
     const { id } = useParams();
+    
 
     useEffect(() => {
     async function fetchPost() {
@@ -28,6 +29,7 @@ export function MyPins() {
     console.log(pin);
     return (
     <>
+    <Link to="/profile"><button>Back</button></Link>
         <p>{pin.title}</p>
         <p>{pin.description}</p>
         <p>{pin.rating}</p>
@@ -37,15 +39,19 @@ export function MyPins() {
             return (
                 <div>
                     {currentComment.comment}
-                </div>
+                    <button onClick={async ()=> {
+                        await api.delete(`comment/delete/${currentComment._id}`)
+                        window.location.reload ()
+                    }}>Delete</button>
+                    </div>
             )
         }
         )
 
         }
-       
+    
 
-        <Link to={`/edit/:pinId${id}`}>
+        <Link to={`/edit/${id}`}>
         <button>Edit</button>
         </Link>
         <Link to={`/create-comment/${id}`}>

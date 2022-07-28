@@ -19,7 +19,7 @@ export function Home() {
     </div>
     </div>
     <Link to="/signup">
-    <button className={styles.signup}>Sign up with email</button>
+    <button className={styles.signupBtn}>Sign up with email</button>
     </Link>
     </>
     

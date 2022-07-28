@@ -10,14 +10,14 @@ export function EditPin() {
         title:"",
         description:"",
         rating: 0,
-        // comment: [{comment:""}] >>>> duvida aqui!!! <<<<<
+        // comment: [{comment:""}] 
 
     });
 
 
     useEffect(() => {
         async function fetchPost() {
-        const response = await api.get(`/pin/my-pins/${id}`);
+        const response = await api.get(`/pin/${id}`);
         console.log(response.data);
         setForm({ ...response.data });
         }
@@ -33,17 +33,19 @@ export function EditPin() {
             try {
                 const response = await api.patch(`/pin/edit/${id}`, form);
                 navigate(`/my-pins/${id}`)
+                console.log(response.data)
             } catch (err) {
                 console.error(err);
             }
             }
             console.log(form);
 
+        
         async function handleDelete() {
         try {
             await api.delete(`/pin/delete/${id}`);
     
-            navigate("/my-pins");
+            navigate("/profile");
         } catch (err) {
             console.error(err);
         }
@@ -51,6 +53,7 @@ export function EditPin() {
 
         return (
         <>
+        <Link to="/profile"><button>Back</button></Link> 
         <form onSubmit={handleSubmit}>
         <label htmlFor="formTitle">Title:</label>
         <input
@@ -76,12 +79,12 @@ export function EditPin() {
             value={form.rating}
             onChange={handleChange}
         >
-            <option>0</option>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+        <option value= "0" >0</option>
+        <option value= "1">1</option>
+        <option value= "2">2</option>
+        <option value= "3">3</option>
+        <option value= "4">4</option>
+        <option value= "5">5</option> 
         </select>
 
         <button type="submit">Save</button>

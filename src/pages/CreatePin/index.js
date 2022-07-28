@@ -1,9 +1,8 @@
-// eslint-disable-next-lin
-import { useState, useContext } from "react";
-// eslint-disable-next-lin
-import { AuthContext } from "../../contexts/authContext";
+import { useState } from "react";
+// import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function CreatePin() {
     
@@ -34,10 +33,13 @@ export function CreatePin() {
     }
 
     return (
+        <>
+    <Link to="/profile"><button>Back</button></Link>
     <form onSubmit={handleSumit}>
         <p>Create your pin</p>
         <label htmlFor="formTitle">Title</label>
         <input
+        id="formTitle"
         placeholder="Title"
         type="text"
         name="title"
@@ -46,6 +48,7 @@ export function CreatePin() {
         />    
         <label htmlFor="formDescription">Description</label>
         <input
+        id="formDescription"
         placeholder="Description"
         type="text"
         name="description"
@@ -54,21 +57,23 @@ export function CreatePin() {
         />
         <label htmlFor="formRating">Rating</label>
         <select
+        id="formRating"
         placeholder="Rating"
         type="number"
         name="rating"
         value={pin.rating}
         onChange={handleChange}
         >
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>    
+        <option value= "0" >0</option>
+        <option value= "1">1</option>
+        <option value= "2">2</option>
+        <option value= "3">3</option>
+        <option value= "4">4</option>
+        <option value= "5">5</option>    
         </select>
         <label htmlFor="formLongitude">Longitude</label>
         <input
+        id="formLongitude"
         placeholder="Longitude"
         type="number"
         name="longitude"
@@ -77,6 +82,7 @@ export function CreatePin() {
         />
         <label htmlFor="formLatitude">Latitude</label>
         <input
+        id="formLatitude"
         placeholder="Latitude"
         type="number"
         name="latitude"
@@ -85,5 +91,6 @@ export function CreatePin() {
         />
         <button type="submit">Create</button>
     </form>
+    </>
     );
 }

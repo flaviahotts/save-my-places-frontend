@@ -52,7 +52,7 @@ export function Signup() {
     <div className={styles.container}>
       <h1>Create Account with Email</h1>
     <form onSubmit={handleSubmit}>
-      {/* <label htmlFor="formName">Nome:</label> */}
+      <label htmlFor="formName">Nome:</label> 
       <input
       placeholder="Username"
         id="formName"
@@ -61,10 +61,10 @@ export function Signup() {
         value={form.name}
         onChange={handleChange}
       />
-      {/* <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} /> */}
+      <label htmlFor="formImg">Sua foto de perfil:</label>
+      <input type="file" id="formImg" onChange={handleImage} /> 
 
-      {/* <label htmlFor="formEmail">E-mail:</label> */}
+      <label htmlFor="formEmail">E-mail:</label> 
       <input
       placeholder="Email"
         id="formEmail"
@@ -73,7 +73,7 @@ export function Signup() {
         value={form.email}
         onChange={handleChange}
       />
-      {/* <label htmlFor="formPassword">Senha:</label> */}
+      <label htmlFor="formPassword">Senha:</label> 
       <input
       placeholder="Password"
         id="formPassword"
@@ -82,7 +82,7 @@ export function Signup() {
         value={form.password}
         onChange={handleChange}
       />
-      {/* <label htmlFor="formConfirmPassword">Confirmação de senha</label> */}
+      <label htmlFor="formConfirmPassword">Confirmação de senha</label>
       <input
       placeholder="Confirm your password"
         id="formConfirmPassword"
