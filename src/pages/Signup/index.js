@@ -126,7 +126,10 @@ export function Signup() {
       <Form.Item>
         <Button type="primary" htmlType="submit" className="login-form-button">
           Create
-        </Button>        
+        </Button>  
+        <Form.Item>
+            <Link to="/">back</Link> 
+            </Form.Item>      
       </Form.Item>
     </Form>
     </Row>

@@ -3,7 +3,7 @@ import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 // import { AuthContext } from "../../contexts/authContext";
 import { Link } from "react-router-dom";
-// import styles from "./styles.module.css";
+import styles from "./styles.module.css";
 import { Card } from 'antd';
 import React from 'react';
 

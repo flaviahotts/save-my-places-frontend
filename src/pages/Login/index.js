@@ -117,9 +117,9 @@ export function Login() {
           <Button type="primary" htmlType="submit" className="login-form-button" style={{background: "", borderColor: ""}}>
             Log in</Button>
             <Form.Item>
-            <Link to="/Signup">register here</Link>
-            </Form.Item>            
-        </Form.Item>
+            <Link to="/Signup">register here</Link>            
+            </Form.Item>             
+            </Form.Item>
       </Form>
       </Row>
       </>

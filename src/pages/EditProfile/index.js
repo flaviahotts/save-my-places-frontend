@@ -30,37 +30,37 @@ export function EditProfile() {
         fetchUser();
         }, []);
 
-    const [img, setImg] = useState("");
+    // const [img, setImg] = useState("");
 
     function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
     console.log(form);
     }
 
-    function handleImage(e) {
-    setImg(e.target.files[0]);
-    }
+    // function handleImage(e) {
+    // setImg(e.target.files[0]);
+    // }
 
-    async function handleUpload() {
-    try {
-        const uploadData = new FormData();
-        uploadData.append("picture", img);
+    // async function handleUpload() {
+    // try {
+    //     const uploadData = new FormData();
+    //     uploadData.append("picture", img);
 
-        const response = await api.post("/upload-image", uploadData);
+    //     const response = await api.post("/upload-image", uploadData);
 
-    return response.data.url;
-    } catch (error) {
-        console.log(error);
-    }
-    }
+    // return response.data.url;
+    // } catch (error) {
+    //     console.log(error);
+    // }
+    // }
 
         async function handleSubmit(e) {
         e.preventDefault();
         try {
         const clone = { ...form };
         delete clone._id;
-        const imgURL = await handleUpload();
-        await api.patch("/user/update-profile", { ...clone, img: imgURL });
+        // const imgURL = await handleUpload();
+        await api.patch("/user/update-profile", clone);
     
         navigate("/profile");
         } catch (err) {
@@ -103,8 +103,8 @@ export function EditProfile() {
             value={form.name}
             onChange={handleChange}
         />
-        <label htmlFor="formImg">Profile photo:</label>
-        <input type="file" id="formImg" onChange={handleImage} />
+        {/* <label htmlFor="formImg">Profile photo:</label>
+        <input type="file" id="formImg" onChange={handleImage} /> */}
         <label htmlFor="formEmail">Email</label>
         <input
             id="email"
