@@ -3,6 +3,9 @@ import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 // import { AuthContext } from "../../contexts/authContext";
 import { Link } from "react-router-dom";
+// import styles from "./styles.module.css";
+import { Card } from 'antd';
+import React from 'react';
 
 export function Profile() {
 const [user, setUser] = useState({ name: "", email: "" });
@@ -39,23 +42,27 @@ const [user, setUser] = useState({ name: "", email: "" });
 
   return (
     <>
+    <div className="{styles.body}">
       <h1>Hello, {user.name}!</h1>
       <p>{user.email}</p>
             <Link to="/update-profile"><button>Edit profile</button></Link>
-            <Link to="/create-pin"><button>Create pin</button></Link>
+            <Link to="/create-pin"><button>Save a place</button></Link>
             <button onClick={handleLogOut}>Sign out</button>
       
 
 {/* Mostrar os pins feitos aqui */}
     <div>{pins.map((currentPins) => {
       return (
-          <div key={`${currentPins._id}$`}>
-            <p> {currentPins.title}</p>
-            <Link to={`/my-pins/${currentPins._id}`}>
-          <button>Details</button>
-        </Link>
+        <div key={`${currentPins._id}$`}>
+          <Card
+          title=""
+          extra= {<Link to={`/my-pins/${currentPins._id}`}>Details</Link>}
+          style={{width: 300,}}>
+          <p> {currentPins.title}</p>
+          </Card>        
           </div>
           )})}
+    </div>
     </div>
       </>
   )}

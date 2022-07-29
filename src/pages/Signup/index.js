@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import styles from "./styles.module.css";
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { Button, Form, Input, Row } from 'antd';
+import React from 'react';
+import { Link } from "react-router-dom";
+import 'antd/dist/antd.css';
+// import styles from "./styles.module.css";
+// import { Link } from "react-router-dom";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -9,38 +15,38 @@ export function Signup() {
     name: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    
   });
 
-  const [img, setImg] = useState("");
+  // const [img, setImg] = useState("");
 
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
+  // function handleChange(e) {
+  //   setForm({ ...form, [e.target.name]: e.target.value });
+  // }
 
-  function handleImage(e) {
-    setImg(e.target.files[0]);
-  }
+  // function handleImage(e) {
+  //   setImg(e.target.files[0]);
+  // }
 
-  async function handleUpload() {
-    try {
-      const uploadData = new FormData();
-      uploadData.append("picture", img);
+  // async function handleUpload() {
+  //   try {
+  //     const uploadData = new FormData();
+  //     uploadData.append("picture", img);
 
-      const response = await api.post("/upload-image", uploadData);
+  //     const response = await api.post("/upload-image", uploadData);
 
-      return response.data.url;
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //     return response.data.url;
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, img: imgURL });
+      // const imgURL = await handleUpload();
+      await api.post("/user/signup", form);
 
       navigate("/login");
     } catch (error) {
@@ -48,53 +54,82 @@ export function Signup() {
     }
   }
 
-  return (
-    <div className={styles.container}>
-      <h1>Create Account with Email</h1>
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label> 
-      <input
-      placeholder="Username"
-        id="formName"
-        name="name"
-        type="text"
-        value={form.name}
-        onChange={handleChange}
-      />
-      <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} /> 
+  const onFinish = async (values) => {
+    console.log('Received values of form: ', values);
+    try {
+      await api.post("/user/signup", values);
 
-      <label htmlFor="formEmail">E-mail:</label> 
-      <input
-      placeholder="Email"
-        id="formEmail"
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+    
+  };
+
+  
+
+  return (
+ <>
+ <div className="" type="flex" justify="center" align="middle" style={{marginTop:"200px", fontSize:"20px"}}>
+  Create an account
+ </div>
+    
+    <Row type="flex" justify="center" align="middle" style={{minHeight: '40vh'}}>
+      
+      <Form 
+      name="normal_login"
+      className="login-form"
+      initialValues={{
+        remember: true,
+      }}
+      onFinish={onFinish}
+    >
+       <Form.Item
+        name="name"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your username',
+          },
+        ]}
+      >
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="name" />
+      </Form.Item>
+
+      <Form.Item
         name="email"
-        type="email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      <label htmlFor="formPassword">Senha:</label> 
-      <input
-      placeholder="Password"
-        id="formPassword"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your email',
+          },
+        ]}
+      >
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="email" />
+      </Form.Item>
+
+      <Form.Item
         name="password"
-        type="password"
-        value={form.password}
-        onChange={handleChange}
-      />
-      <label htmlFor="formConfirmPassword">Confirmação de senha</label>
-      <input
-      placeholder="Confirm your password"
-        id="formConfirmPassword"
-        type="password"
-        name="confirmPassword"
-        value={form.confirmPassword}
-        onChange={handleChange}
-      />
-      <div>
-      <button type="submit">Create an account</button>
-      </div>      
-    </form>
-    </div>
+        rules={[
+          {
+            required: true,
+            message: 'Please input your Password',
+          },
+        ]}
+      >
+        <Input
+          prefix={<LockOutlined className="site-form-item-icon" />}
+          type="password"
+          placeholder="Password"
+        />
+      </Form.Item>
+      <Form.Item>
+        <Button type="primary" htmlType="submit" className="login-form-button">
+          Create
+        </Button>        
+      </Form.Item>
+    </Form>
+    </Row>
+    </>
   );
-}
+};

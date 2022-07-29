@@ -1,9 +1,9 @@
-body {
+* body {
     margin: 0;
     padding: 0px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Kalam&display=swap');
+
 
 /* .container {
 position: absolute;
@@ -16,7 +16,7 @@ font-family: 'Inter';
 } */
 
 
-.header p {
+/* .header p {
 position: relative;
 text-align: center;
 width: 200px;
@@ -81,4 +81,23 @@ border-radius: 16px;
 border: 1px solid;
 justify-content: center;   
 }
+ */ 
+
+ @import url('https://fonts.googleapis.com/css2?family=Inter&family=Kalam&display=swap');
+
+ .container{
+   
+text-align: center;
+padding-top: 50px;
+margin-top: 150px; 
+margin-left: 20px;
+margin-right: 20px;
+font-family: 'Inter';
+
+ }
+
+ .btnSignup{
+    display: flex;
+    align-items: center;
+ }
 

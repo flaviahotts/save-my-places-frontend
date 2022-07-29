@@ -27,6 +27,7 @@ export function MyPins() {
     fetchPost();
     }, [id]);
     console.log(pin);
+    
     return (
     <>
     <Link to="/profile"><button>Back</button></Link>

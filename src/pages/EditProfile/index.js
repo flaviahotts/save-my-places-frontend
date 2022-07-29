@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import styles from "./styles.module.css";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 
@@ -93,7 +92,7 @@ export function EditProfile() {
         
         <div>
         <Link to="/profile"><button>Back</button></Link>        
-        <header className={styles.header}>My profile</header>
+        <header>My profile</header>
         </div>
         <form onSubmit={handleSubmit}>
         <label htmlFor="formName">Name:</label>

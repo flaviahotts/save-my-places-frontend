@@ -10,8 +10,7 @@ export function CreatePin() {
     title: "",
     description: "",
     rating: "",
-    longitude: "",
-    latitude: "",
+    
 });
 
     const navigate = useNavigate();
@@ -36,7 +35,7 @@ export function CreatePin() {
         <>
     <Link to="/profile"><button>Back</button></Link>
     <form onSubmit={handleSumit}>
-        <p>Create your pin</p>
+        <p>Save a place</p>
         <label htmlFor="formTitle">Title</label>
         <input
         id="formTitle"
@@ -71,25 +70,8 @@ export function CreatePin() {
         <option value= "4">4</option>
         <option value= "5">5</option>    
         </select>
-        <label htmlFor="formLongitude">Longitude</label>
-        <input
-        id="formLongitude"
-        placeholder="Longitude"
-        type="number"
-        name="longitude"
-        value={pin.longitude}
-        onChange={handleChange}
-        />
-        <label htmlFor="formLatitude">Latitude</label>
-        <input
-        id="formLatitude"
-        placeholder="Latitude"
-        type="number"
-        name="latitude"
-        value={pin.latitude}
-        onChange={handleChange}
-        />
-        <button type="submit">Create</button>
+        
+        <button type="submit">Save</button>
     </form>
     </>
     );

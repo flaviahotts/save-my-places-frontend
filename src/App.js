@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.css";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
