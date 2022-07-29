@@ -1,4 +1,4 @@
-# Todo List App
+# Save My Places
 
 This project was developed with MERN stack as part of the Web Development Bootcamp.
 
