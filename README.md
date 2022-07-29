@@ -1,4 +1,4 @@
-# Save My Places
+# Save My Places App
 
 This project was developed with MERN stack as part of the Web Development Bootcamp.
 
