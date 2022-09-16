@@ -3,6 +3,9 @@
 This project was developed with MERN stack as part of the Web Development Bootcamp.<br>
 < Currently work in progress >
 
+### Backend code
+Check [here](https://github.com/flaviahotts/save-my-places-backend)
+
 
 ### Project Apresentation
 
