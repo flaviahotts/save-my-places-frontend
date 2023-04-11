@@ -1,6 +1,6 @@
 # Save My Places App (frontend)
 
-This project was developed with MERN stack as part of the Web Development Bootcamp.<br>
+This project was developed with MERN stack (MongoDB, Espress, React and Node) as part of the Web Development Bootcamp.<br>
 < Currently work in progress >
 
 ### Backend code
